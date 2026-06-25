@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Astrobite – Your AI Astrologer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body class="chat-page">
+
+  <!-- ─────────────── CHAT NAVBAR ─────────────── -->
+  <nav class="chat-navbar">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">✦</span> Astrobite
+    </a>
+    <div class="chat-nav-right">
+      <span class="online-indicator"><span class="dot"></span> AI Online</span>
+      <a href="index.html" class="btn btn-ghost btn-sm">← Back to Home</a>
+    </div>
+  </nav>
+
+  <!-- ─────────────── MAIN CHAT LAYOUT ─────────────── -->
+  <div class="chat-layout">
+
+    <!-- ── LEFT PANEL: Birth Details Form ── -->
+    <aside class="chat-sidebar" id="chatSidebar">
+      <div class="sidebar-header">
+        <i class="fas fa-user-circle"></i>
+        <h3>Your Birth Profile</h3>
+      </div>
+      <p class="sidebar-desc">Fill in your birth details so Astrobite can personalize your reading.</p>
+
+      <form id="birthForm" class="birth-form">
+        <div class="form-group">
+          <label for="name"><i class="fas fa-user"></i> Full Name</label>
+          <input type="text" id="name" placeholder="e.g., Arjun Mehta" required />
+        </div>
+
+        <div class="form-group">
+          <label for="dob"><i class="fas fa-calendar"></i> Date of Birth</label>
+          <input type="date" id="dob" required />
+        </div>
+
+        <div class="form-group">
+          <label for="tob"><i class="fas fa-clock"></i> Time of Birth</label>
+          <input type="time" id="tob" required />
+          <span class="form-hint">Exact time gives more accurate results</span>
+        </div>
+
+        <div class="form-group">
+          <label for="pob"><i class="fas fa-map-marker-alt"></i> Place of Birth</label>
+          <input type="text" id="pob" placeholder="e.g., Mumbai, India" required />
+        </div>
+
+        <div class="form-group">
+          <label for="gender"><i class="fas fa-venus-mars"></i> Gender</label>
+          <select id="gender">
+            <option value="">Select gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other / Prefer not to say</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="readingType"><i class="fas fa-star"></i> Reading Focus</label>
+          <select id="readingType">
+            <option value="general">General Life Reading</option>
+            <option value="career">Career &amp; Finance</option>
+            <option value="love">Love &amp; Relationships</option>
+            <option value="health">Health &amp; Wellness</option>
+            <option value="spiritual">Spiritual Growth</option>
+            <option value="forecast">Daily Forecast</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full" id="saveProfileBtn">
+          <i class="fas fa-save"></i> Save &amp; Start Reading
+        </button>
+      </form>
+
+      <!-- Profile saved state -->
+      <div class="profile-saved" id="profileSaved" style="display:none;">
+        <div class="profile-card">
+          <div class="profile-avatar" id="profileAvatar">A</div>
+          <div class="profile-info">
+            <strong id="profileName">–</strong>
+            <span id="profileDob">–</span>
+            <span id="profilePob">–</span>
+          </div>
+        </div>
+        <button class="btn btn-ghost btn-sm btn-full" id="editProfileBtn">
+          <i class="fas fa-edit"></i> Edit Profile
+        </button>
+      </div>
+
+      <!-- Quick prompt suggestions -->
+      <div class="quick-prompts" id="quickPrompts" style="display:none;">
+        <h4><i class="fas fa-magic"></i> Quick Questions</h4>
+        <button class="quick-btn" data-prompt="What does my birth chart say about my career prospects this year?">Career this year?</button>
+        <button class="quick-btn" data-prompt="What are my strongest planetary placements and how do they influence my personality?">My key planets?</button>
+        <button class="quick-btn" data-prompt="What does my chart say about love and relationships in the near future?">Love life outlook?</button>
+        <button class="quick-btn" data-prompt="Give me today's personalized forecast based on my birth chart.">Today's forecast</button>
+        <button class="quick-btn" data-prompt="What Vedic remedies would you recommend for me based on my chart?">Remedies for me?</button>
+      </div>
+    </aside>
+
+    <!-- ── RIGHT PANEL: Chat Window ── -->
+    <main class="chat-main">
+      <!-- Chat Messages Area -->
+      <div class="chat-messages" id="chatMessages">
+
+        <!-- Welcome message (shown before profile is saved) -->
+        <div class="welcome-screen" id="welcomeScreen">
+          <div class="welcome-icon">✦</div>
+          <h2>Welcome to Astrobite</h2>
+          <p>Fill in your birth details on the left panel to begin your personalized astrological journey.</p>
+          <div class="welcome-features">
+            <span><i class="fas fa-check-circle"></i> Vedic &amp; Western Astrology</span>
+            <span><i class="fas fa-check-circle"></i> Powered by Claude AI</span>
+            <span><i class="fas fa-check-circle"></i> Completely Private</span>
+          </div>
+        </div>
+
+        <!-- Chat messages will be appended here by JS -->
+      </div>
+
+      <!-- Typing indicator -->
+      <div class="typing-indicator" id="typingIndicator" style="display:none;">
+        <div class="typing-bubble">
+          <span></span><span></span><span></span>
+        </div>
+        <span class="typing-text">Astrobite is consulting the stars…</span>
+      </div>
+
+      <!-- ── Chat Input Bar ── -->
+      <div class="chat-input-bar" id="chatInputBar">
+        <div class="chat-input-wrapper">
+          <textarea
+            id="chatInput"
+            placeholder="Ask your astrologer anything… (e.g. What does my chart say about my marriage?)"
+            rows="1"
+            disabled
+          ></textarea>
+          <button class="send-btn" id="sendBtn" disabled title="Send message">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+        <p class="input-disclaimer">
+          <i class="fas fa-info-circle"></i> Astrobite is for entertainment and guidance purposes only. Not a substitute for professional advice.
+        </p>
+      </div>
+    </main>
+  </div>
+
+  <!-- ─────────────── API KEY MODAL ─────────────── -->
+  <div class="modal-overlay" id="apiKeyModal">
+    <div class="modal">
+      <div class="modal-icon">🔑</div>
+      <h3>Enter Your API Key</h3>
+      <p>Astrobite uses AI to deliver personalized readings. Enter your API key to get started. Your key is stored locally in your browser and never sent to our servers.</p>
+      <div class="form-group">
+        <label for="apiKeyInput">API Key</label>
+        <div class="api-key-input-wrapper">
+          <input type="password" id="apiKeyInput" placeholder="sk-..." />
+          <button type="button" id="toggleApiKey" title="Show/Hide key">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+      </div>
+      <a href="https://platform.openai.com/api-keys" target="_blank" class="api-link">
+        <i class="fas fa-external-link-alt"></i> Get your API key at platform.openai.com/api-keys
+      </a>
+      <div class="modal-actions">
+        <button class="btn btn-primary btn-full" id="saveApiKeyBtn">
+          <i class="fas fa-check"></i> Save &amp; Continue
+        </button>
+      </div>
+      <p class="modal-note">You can change this key anytime from the settings.</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
