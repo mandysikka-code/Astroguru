@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Astrobite – AI Astrology Agent</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ─────────────── NAVBAR ─────────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">✦</span> Astrobite
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="chat.html" class="btn btn-nav">Ask the Stars →</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#features">Features</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="chat.html" class="btn btn-primary">Ask the Stars →</a>
+  </div>
+
+  <!-- ─────────────── HERO SECTION ─────────────── -->
+  <section class="hero">
+    <!-- Animated star particles -->
+    <div class="stars" id="stars"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span> Powered by AI
+      </div>
+      <h1 class="hero-title">
+        Discover Your<br />
+        <span class="gradient-text">Cosmic Destiny</span>
+      </h1>
+      <p class="hero-subtitle">
+        Get deeply personalized Vedic &amp; Western astrology readings based on your birth chart. Ask unlimited questions — your AI astrologer is available 24/7.
+      </p>
+      <div class="hero-cta">
+        <a href="chat.html" class="btn btn-primary btn-lg">
+          <i class="fas fa-star"></i> Start Your Reading
+        </a>
+        <a href="#how-it-works" class="btn btn-ghost btn-lg">
+          See How It Works
+        </a>
+      </div>
+      <div class="hero-trust">
+        <span><i class="fas fa-shield-alt"></i> 100% Private</span>
+        <span><i class="fas fa-bolt"></i> Instant Answers</span>
+        <span><i class="fas fa-globe"></i> Vedic &amp; Western</span>
+      </div>
+    </div>
+
+    <!-- Zodiac wheel decoration -->
+    <div class="hero-visual">
+      <div class="zodiac-ring outer-ring">
+        <span>♈</span><span>♉</span><span>♊</span><span>♋</span>
+        <span>♌</span><span>♍</span><span>♎</span><span>♏</span>
+        <span>♐</span><span>♑</span><span>♒</span><span>♓</span>
+      </div>
+      <div class="zodiac-ring inner-ring">
+        <span>☉</span><span>☽</span><span>♂</span><span>♀</span>
+        <span>♃</span><span>♄</span><span>⛢</span><span>♆</span>
+      </div>
+      <div class="zodiac-center">✦</div>
+    </div>
+  </section>
+
+  <!-- ─────────────── FEATURES SECTION ─────────────── -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">What We Offer</span>
+        <h2>Everything You Need to<br /><span class="gradient-text">Decode the Stars</span></h2>
+        <p>Astrobite combines ancient astrological wisdom with modern AI to give you meaningful, accurate, and personalized insights.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+            <i class="fas fa-map-signs"></i>
+          </div>
+          <h3>Birth Chart Analysis</h3>
+          <p>Enter your exact birth date, time, and location. Get a full Lagna, Moon sign, and rising sign breakdown powered by AI.</p>
+        </div>
+
+        <div class="feature-card featured">
+          <div class="feature-badge">Most Popular</div>
+          <div class="feature-icon" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+            <i class="fas fa-comments"></i>
+          </div>
+          <h3>Unlimited AI Chat</h3>
+          <p>Ask anything — career, love, finance, health. Your AI astrologer remembers your chart and gives contextual answers every time.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3>Compatibility Reading</h3>
+          <p>Check relationship compatibility between two birth charts. Discover synastry, composite charts, and love potential.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <h3>Daily &amp; Weekly Forecast</h3>
+          <p>Receive personalized daily and weekly horoscope predictions based on current planetary transits affecting your chart.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #fa709a, #fee140);">
+            <i class="fas fa-gem"></i>
+          </div>
+          <h3>Remedies &amp; Guidance</h3>
+          <p>Get Vedic remedies, gemstone recommendations, and mantras suggested specifically for your planetary placements.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #a18cd1, #fbc2eb);">
+            <i class="fas fa-language"></i>
+          </div>
+          <h3>Multi-Language Support</h3>
+          <p>Ask questions in English, Hindi, or other major languages. Get responses in the language you're most comfortable with.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── HOW IT WORKS ─────────────── -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Simple Process</span>
+        <h2>Your Reading in<br /><span class="gradient-text">3 Easy Steps</span></h2>
+      </div>
+
+      <div class="steps-container">
+        <div class="step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Enter Your Birth Details</h3>
+            <p>Provide your full name, date of birth, exact time of birth, and place of birth. This creates your unique cosmic blueprint.</p>
+          </div>
+          <div class="step-icon"><i class="fas fa-user-plus"></i></div>
+        </div>
+
+        <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+
+        <div class="step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Ask Your Question</h3>
+            <p>Type any question about your life — relationships, career, health, spirituality, or a general life reading.</p>
+          </div>
+          <div class="step-icon"><i class="fas fa-question-circle"></i></div>
+        </div>
+
+        <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+
+        <div class="step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Get AI-Powered Insights</h3>
+            <p>Our AI analyzes your birth chart in real time and delivers deep, personalized astrological guidance instantly.</p>
+          </div>
+          <div class="step-icon"><i class="fas fa-star-and-crescent"></i></div>
+        </div>
+      </div>
+
+      <div class="steps-cta">
+        <a href="chat.html" class="btn btn-primary btn-lg">
+          Begin Your Journey <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── TESTIMONIALS ─────────────── -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Real Stories</span>
+        <h2>What Our Users Are<br /><span class="gradient-text">Saying</span></h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars-rating">★★★★★</div>
+          <p>"Astrobite gave me the most accurate career reading I've ever received. The AI truly understood my chart and the planetary influences on my professional life."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">P</div>
+            <div>
+              <strong>Priya Sharma</strong>
+              <span>Mumbai, India</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card featured-testimonial">
+          <div class="stars-rating">★★★★★</div>
+          <p>"I was skeptical at first but the compatibility reading for my partner and me was shockingly accurate. The remedies actually helped improve our communication."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">R</div>
+            <div>
+              <strong>Rahul Verma</strong>
+              <span>Delhi, India</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars-rating">★★★★★</div>
+          <p>"The daily forecasts are my morning ritual now. It's like having a personal astrologer who knows my chart inside out and is always available."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">A</div>
+            <div>
+              <strong>Anika Patel</strong>
+              <span>Bangalore, India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── CTA BANNER ─────────────── -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Your Cosmic Story Is Waiting</h2>
+        <p>Ask your AI astrologer anything — no appointments, no waiting, just answers written in the stars.</p>
+        <a href="chat.html" class="btn btn-white btn-lg">
+          <i class="fas fa-star"></i> Start Free Reading Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── FOOTER ─────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo" style="font-size:1.5rem; margin-bottom:1rem;">
+            <span class="logo-icon">✦</span> Astrobite
+          </div>
+          <p>AI-powered astrology readings combining ancient Vedic wisdom with modern artificial intelligence.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="chat.html">AI Chat</a></li>
+            <li><a href="#">Birth Chart</a></li>
+            <li><a href="#">Compatibility</a></li>
+            <li><a href="#">Daily Forecast</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Astrology</h4>
+          <ul>
+            <li><a href="#">Vedic Astrology</a></li>
+            <li><a href="#">Western Astrology</a></li>
+            <li><a href="#">Zodiac Signs</a></li>
+            <li><a href="#">Planets</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Astrobite. All rights reserved. | For entertainment purposes only.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
